@@ -2,13 +2,13 @@
 
 public class BaseWarrior : BaseClassScript
 {
-    public BaseWarrior()
+    public BaseWarrior ()
     {
         ClassName="Warrior";
         Strength=5;
         Health=10;
         Intelligent=2;
-        Damage=2*Strength;
+        Damage=Strength*2;
         Shoot=false;
     }
 }
