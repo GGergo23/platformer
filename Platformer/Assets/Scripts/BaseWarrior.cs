@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class BaseWarrior : BaseClassScript
 {
+
+    private Animator anim;
+
     public BaseWarrior ()
     {
         ClassName="Warrior";
@@ -11,4 +15,16 @@ public class BaseWarrior : BaseClassScript
         Damage=Strength*2;
         Shoot=false;
     }
+
+    public void Attack() {
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("attack", false);
+        StartCoroutine(HitSword());
+    }
+
+    private IEnumerator HitSword() {
+        anim.SetBool("attack", true);
+        yield return new WaitForSeconds(0.2f);
+        anim.SetBool("attack", false);
+    } 
 }

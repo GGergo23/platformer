@@ -10,4 +10,8 @@ public class BaseWizard : BaseClassScript
         Damage = Strength * 2;
         Shoot = true;
     }
+
+    public void Attack(GameObject fireBall) {
+
+    }
 }

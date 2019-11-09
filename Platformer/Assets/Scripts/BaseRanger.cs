@@ -11,4 +11,8 @@ public class BaseRanger : BaseClassScript
         Damage=Strength*2;
         Shoot=false;
     }
+
+    public void Attack(GameObject garanade) {
+
+    }
 }
