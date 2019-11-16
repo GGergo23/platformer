@@ -2,6 +2,9 @@
 
 public class BaseRanger : BaseClassScript
 {
+
+    GameObject firepoint;
+
     public BaseRanger ()
     {
         ClassName="Ranger";
@@ -12,7 +15,11 @@ public class BaseRanger : BaseClassScript
         Shoot=false;
     }
 
-    public void Attack(GameObject garanade) {
+    void Start() {
+        firepoint = GameObject.Find("Firepoint");
+    }
 
+    public void Attack(ShootController granade) {
+        Instantiate(granade.gameObject, firepoint.transform.position, firepoint.transform.rotation);
     }
 }
